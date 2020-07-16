@@ -12,14 +12,14 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     var post = Post(
-            12, 1594585699570, "Мартынов Я.В.",
-            "10 февраля, среда\n" +
-                    "\n" +
-                    "Львам так надоело терять людей! \n" +
-                    "Им нужен тот, кто придет в их жизнь \n" +
-                    "и скажет: 'Хочешь, не хочешь, а я остаюсь", 0,
-            0, 5, isLike = false, isComment = false, isShare = false,
-            adress = "Проспект Королева дом 5", coordinates = Pair(55.921606, 37.841268)
+        12, 1594585699570, "Мартынов Я.В.",
+        "10 февраля, среда\n" +
+                "\n" +
+                "Львам так надоело терять людей! \n" +
+                "Им нужен тот, кто придет в их жизнь \n" +
+                "и скажет: 'Хочешь, не хочешь, а я остаюсь", 0,
+        0, 5, isLike = false, isComment = false, isShare = false,
+        adress = "Проспект Королева дом 5", coordinates = Pair(55.921606, 37.841268)
     )
     var postTemp = post.copy()
 
@@ -44,6 +44,15 @@ class MainActivity : AppCompatActivity() {
             init(postTemp)
         }
 
+    }
+
+    fun clicVideo(view: View) {
+
+        val intent = Intent().apply {
+            action = Intent.ACTION_VIEW
+            setData(Uri.parse("https://www.youtube.com/watch?v=eBcOK3ay94A"))
+        }
+        startActivity(intent)
     }
 
     fun clicLocal(view: View) {
@@ -119,6 +128,8 @@ class MainActivity : AppCompatActivity() {
 
 
 }
+
+
 
 
 
